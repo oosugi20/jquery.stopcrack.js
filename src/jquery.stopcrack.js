@@ -1,10 +1,3 @@
-/*! jquery.stopcrack.js (git@github.com:oosugi20/jquery.stopcrack.js.git)
-* フロートした要素を隙間なく並べる
- * lastupdate: 2013-10-06
- * version: 0.0.0
- * author: Makoto OOSUGI <oosugi20@gmail.com>
- * License: MIT
- */
 ;(function ($, window, undefiend) {
 'use script';
 
