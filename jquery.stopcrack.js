@@ -1,7 +1,7 @@
 /*! jquery.stopcrack.js (git@github.com:oosugi20/jquery.stopcrack.js.git)
 * フロートした要素を隙間なく並べる
- * lastupdate: 2013-10-06
- * version: 0.0.0
+ * lastupdate: 2013-10-09
+ * version: 0.1.0
  * author: Makoto OOSUGI <oosugi20@gmail.com>
  * License: MIT
  */
@@ -127,13 +127,15 @@ Module = function (element, options) {
 	 */
 	fn.refresh = function () {
 		var colSelector = '.' + this.options.colClassName;
-		this.$el.find(colSelector).remove();
-		this.$list.show();
-		this.width = this.$el.width();
-		this.colLength = Math.floor(this.$list.width() / this.$item.outerWidth(true));
-		this.cols = [];
-		this._renderCols();
-		this._render();
+		if (this.$el.is(':visible')) {
+			this.$el.find(colSelector).remove();
+			this.$list.show();
+			this.width = this.$el.width();
+			this.colLength = Math.floor(this.$list.width() / this.$item.outerWidth(true));
+			this.cols = [];
+			this._renderCols();
+			this._render();
+		}
 	};
 
 })(Module.prototype);
@@ -147,6 +149,8 @@ $.fn[PLUGIN_NAME] = function (options) {
 			module = new Module(this, options);
 			$.data(this, PLUGIN_NAME, module);
 			module.init();
+		} else {
+			$.data(this, PLUGIN_NAME).refresh();
 		}
 	});
 };
