@@ -22,7 +22,7 @@ module.exports = (grunt) ->
         options:
           banner: '<%= banner %>'
         files: [
-          'jquery.stopcrack.js': 'src/jquery.stopcrack.js'
+          'dest/jquery.stopcrack.js': 'src/jquery.stopcrack.js'
         ]
 
     uglify:
@@ -30,7 +30,7 @@ module.exports = (grunt) ->
         options:
           banner: '<%= banner %>'
         files: [
-          'jquery.stopcrack.min.js': 'src/jquery.stopcrack.js'
+          'dest/jquery.stopcrack.min.js': 'src/jquery.stopcrack.js'
         ]
 
 
