@@ -120,13 +120,15 @@ Module = function (element, options) {
 	 */
 	fn.refresh = function () {
 		var colSelector = '.' + this.options.colClassName;
-		this.$el.find(colSelector).remove();
-		this.$list.show();
-		this.width = this.$el.width();
-		this.colLength = Math.floor(this.$list.width() / this.$item.outerWidth(true));
-		this.cols = [];
-		this._renderCols();
-		this._render();
+		if (this.$el.is(':visible')) {
+			this.$el.find(colSelector).remove();
+			this.$list.show();
+			this.width = this.$el.width();
+			this.colLength = Math.floor(this.$list.width() / this.$item.outerWidth(true));
+			this.cols = [];
+			this._renderCols();
+			this._render();
+		}
 	};
 
 })(Module.prototype);
