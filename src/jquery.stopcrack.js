@@ -142,6 +142,8 @@ $.fn[PLUGIN_NAME] = function (options) {
 			module = new Module(this, options);
 			$.data(this, PLUGIN_NAME, module);
 			module.init();
+		} else {
+			$.data(this, PLUGIN_NAME).refresh();
 		}
 	});
 };
