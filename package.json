@@ -1,6 +1,6 @@
 {
 	"name": "jquery.stopcrack.js",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "フロートした要素を隙間なく並べる",
 	"main": "Gruntfile.js",
 	"author": "Makoto OOSUGI <oosugi20@gmail.com>",

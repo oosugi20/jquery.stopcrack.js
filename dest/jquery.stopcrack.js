@@ -1,7 +1,7 @@
 /*! jquery.stopcrack.js (git@github.com:oosugi20/jquery.stopcrack.js.git)
 * フロートした要素を隙間なく並べる
- * lastupdate: 2013-10-09
- * version: 0.1.0
+ * lastupdate: 2013-10-11
+ * version: 0.1.1
  * author: Makoto OOSUGI <oosugi20@gmail.com>
  * License: MIT
  */
@@ -135,6 +135,7 @@ Module = function (element, options) {
 			this.cols = [];
 			this._renderCols();
 			this._render();
+			this.$el.trigger('stopcrack:refresh');
 		}
 	};
 
@@ -143,7 +144,7 @@ Module = function (element, options) {
 
 // set jquery.fn
 $.fn[PLUGIN_NAME] = function (options) {
-	this.each(function () {
+	return this.each(function () {
 		var module;
 		if (!$.data(this, PLUGIN_NAME)) {
 			module = new Module(this, options);
