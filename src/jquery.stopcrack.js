@@ -128,6 +128,7 @@ Module = function (element, options) {
 			this.cols = [];
 			this._renderCols();
 			this._render();
+			this.$el.trigger('stopcrack:refresh');
 		}
 	};
 
