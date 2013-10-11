@@ -136,7 +136,7 @@ Module = function (element, options) {
 
 // set jquery.fn
 $.fn[PLUGIN_NAME] = function (options) {
-	this.each(function () {
+	return this.each(function () {
 		var module;
 		if (!$.data(this, PLUGIN_NAME)) {
 			module = new Module(this, options);
